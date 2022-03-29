@@ -8,7 +8,7 @@
  *
  * */
 
-const sum = (a, b) => a + b;
+const sum = (a, b) => a - b;
 
 function sumManyNumbers(...manyThings) {
   return manyThings.reduce(sum);

@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pomidor": "dir",
     "test": "jest --transform babel-jest",
     "test:watch": "npm run test -- --watchAll",
     "test:verbose": "npm run test:watch -- --verbose",
     "test:experiments": "npm run test:watch -- src/experiments",
+    "test:my": "npm run test:watch -- src/my-tests",
     "test:warm-up-102": "npm run test:watch -- src/day-1/10-warm-up/102-sample-logic.spec.js",
     "test:warm-up-103": "npm run test:watch -- src/day-1/10-warm-up/103-understand-assertions.spec.js",
     "test:task-104": "npm run test:watch -- src/day-1/10-warm-up/104-task-a-warm-up.spec.js",

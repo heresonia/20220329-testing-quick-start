@@ -47,7 +47,12 @@
 const sum = (a, b) => a + b;
 
 function sumManyNumbers(...manyThings) {
-  return manyThings.reduce(sum);
+  // Sposób 1:  
+  if(manyThings.length === 0) {
+    return 0;     
+  } 
+  // Sposób 2:
+  return manyThings.reduce(sum, 0);
 }
 
 test('sum of one number is that number', () => {
@@ -72,4 +77,10 @@ test('sum of -100 and -10 and -1 should be -111', () => {
   const result = sumManyNumbers(-100, -10, -1);
 
   expect(result).toBe(-111);
+});
+
+test('should be 0 if no argument given', () => {
+    const result = sumManyNumbers();
+
+    expect(result).toBe(0);
 });
