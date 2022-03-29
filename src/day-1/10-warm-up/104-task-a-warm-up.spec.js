@@ -20,13 +20,15 @@
  *
  * */
 
+function throwIfNotNumber(num, name) {
+    if(typeof num !== 'number') {
+        throw new Error(`${name} must be a number !`)
+    } 
+}
+
 function divide(dividend, divisor) {
-    if(typeof dividend !== 'number') {
-        throw new Error('Dividend must be a number !')
-    }
-    if(typeof divisor !== 'number') {
-        throw new Error('Divisor must be a number !')
-    }
+    throwIfNotNumber(dividend, 'Dividend')
+    throwIfNotNumber(divisor, 'Divisor')
     if(divisor === 0) {
         throw new Error('You cannot divide by 0')  
     }
