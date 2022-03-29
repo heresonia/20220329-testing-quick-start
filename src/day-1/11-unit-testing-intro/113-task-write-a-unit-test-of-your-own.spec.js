@@ -12,15 +12,60 @@
  *
  *   przykład wywołania:
  *   attachProfession({}, "programmer")  ---- wynik: { profession: 'programmer' }
- *   attachProfesssion({name: 'John'}) ---- wynik: { name: 'John', profession: 'unknown' }
+ *   attachProfession({name: 'John'}) ---- wynik: { name: 'John', profession: 'unknown' }
  *
  *  Rozpisz przypadki testowe, zaimplementuj funkcję.
  * */
 
-function attachProfession(user, profession) {}
+function attachProfession(user, profession) {
+    let computedProfession = profession;
+    if(!profession) {
+        computedProfession = 'unknown';
+    }
+    const computedUser = {};
+    for(const key in user) {
+      computedUser[key] = user[key];
+    }
+    computedUser.profession = computedProfession;
+    return computedUser;
+}
 
-it.todo('should ');
+describe('attachProfession', () => {
+    
+    it('should give me "unknown" profession if no argument given', () => {
+        const user = {};
+        
+        const result = attachProfession(user);
+        
+        expect(result).toEqual({profession: 'unknown'})
+    });
+    
+    it('should attach profession "programmer"', () => {
+        const user = {};
+        
+        const result = attachProfession(user, 'programmer');
+        
+        expect(result).toEqual({profession: 'programmer'})
+    });
+    
+    it('should attach profession "pilot" to existing user', () => {
+        const user = {name: 'John'};
+        
+        const result = attachProfession(user, 'pilot');
+        
+        expect(result).toEqual({name: 'John', profession: 'pilot'})
+    });
+    
+    it('should not mutate input value', () => {
+        const user = {name: 'John'};
+        
+        const result = attachProfession(user, 'pilot');
+        
+        expect(result).not.toBe(user)
+    });
+})
 
-it.todo('should ');
 
-it.todo('should ');
+
+
+
