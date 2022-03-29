@@ -18,9 +18,14 @@
  * */
 
 function attachProfession(user, profession = 'unknown') {
-    const computedUser = Object.assign({}, user);
-    computedUser.profession = profession;
-    return computedUser;
+    return {
+        
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_object_literals
+        ...user,
+
+        // https://alligator.io/js/object-property-shorthand-es6/
+        profession
+    };
 }
 
 describe('attachProfession', () => {
