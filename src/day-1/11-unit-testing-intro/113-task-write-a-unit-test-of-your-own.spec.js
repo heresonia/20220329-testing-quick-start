@@ -17,16 +17,9 @@
  *  Rozpisz przypadki testowe, zaimplementuj funkcję.
  * */
 
-function attachProfession(user, profession) {
-    let computedProfession = profession;
-    if(!profession) {
-        computedProfession = 'unknown';
-    }
-    const computedUser = {};
-    for(const key in user) {
-      computedUser[key] = user[key];
-    }
-    computedUser.profession = computedProfession;
+function attachProfession(user, profession = 'unknown') {
+    const computedUser = Object.assign({}, user);
+    computedUser.profession = profession;
     return computedUser;
 }
 
