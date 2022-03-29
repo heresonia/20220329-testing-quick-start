@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pomidor": "dir",
-    "test": "jest --transform babel-jest",
+    "test": "jest",
     "test:watch": "npm run test -- --watchAll",
     "test:verbose": "npm run test:watch -- --verbose",
     "test:experiments": "npm run test:watch -- src/experiments",

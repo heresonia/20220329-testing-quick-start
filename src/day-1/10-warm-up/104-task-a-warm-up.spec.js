@@ -20,11 +20,49 @@
  *
  * */
 
-function divide(dividend, divisor) {}
+function divide(dividend, divisor) {
+    if(typeof dividend !== 'number') {
+        throw new Error('Dividend must be a number !')
+    }
+    if(typeof divisor !== 'number') {
+        throw new Error('Divisor must be a number !')
+    }
+    if(divisor === 0) {
+        throw new Error('You cannot divide by 0')  
+    }
+    return dividend / divisor;
+}
 
-test('should properly divide positive numbers', () => {});
+test('should properly divide positive numbers', () => {
+    const a = 100;
+    const b = 10;
+    
+    const result = divide(a, b);
+    
+    expect(result).toBe(10);
+});
 
-test('should properly divide negative numbers', () => {});
+test('should properly divide negative numbers', () => {
+    const a = -1000;
+    const b = 10;
+    
+    const result = divide(a, b);
+    
+    expect(result).toBe(-100);
+});
+
+test('should throw error if not a number given as argument', () => {
+    const a = 'hello';
+    const b = 'world';
+    
+    expect(() => divide(a, 10)).toThrowError('Dividend must be a number !');
+    expect(() => divide(10, b)).toThrowError('Divisor must be a number !');
+});
 
 // Extra task:
-test('*should throw error when divisor is equal 0 like "You cannot divide by 0"', () => {});
+test('*should throw error when divisor is equal 0 like "You cannot divide by 0"', () => {
+    const a = 100;
+    const b = 0;
+    
+    expect(() => divide(a, b)).toThrowError('You cannot divide by 0');
+});
