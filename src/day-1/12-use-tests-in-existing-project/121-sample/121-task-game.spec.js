@@ -40,5 +40,8 @@ describe('The Rock-Paper-Scissors Game', () => {
     possibleChoices(['rock', 'paper', 'scissors']);
   });
 
-  it.todo('suppose to have a test');
+  it('should ...', () => {})
+  
+  
+  
 });
