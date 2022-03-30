@@ -4,27 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html --open",
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
     "test:verbose": "npm run test:watch -- --verbose",
-    "test:validators": "npm run test:watch -- src/validators/form-validators.spec.js",
-    "test:errors": "npm run test:watch -- src/validators/form-errors.spec.js"
+    "test:validators": "npm run test:watch -- src/validators/form-validators.js",
+    "test:errors": "npm run test:watch -- src/validators/form-errors.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@types/jest": "^27.4.1",
-    "jest": "^27.5.1",
-    "parcel": "^2.4.0"
-  },
-  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
+    "@types/jest": "^27.4.1",
     "babel-jest": "^27.5.1",
     "bulma": "^0.9.3",
-    "msw": "^0.39.2"
+    "jest": "^27.5.1",
+    "msw": "^0.39.2",
+    "parcel": "^2.4.0"
   },
   "type": "module"
 }

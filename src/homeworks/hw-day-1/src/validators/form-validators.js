@@ -33,3 +33,60 @@ export function validatePassword(value) {
   }
   return { password: '' };
 }
+
+
+
+  describe('validateEmail', () => {
+    // ARRANGE:
+    it("should inform when the field is required", () => {      
+      // ACT
+      const value = '';
+      // ASSERT
+      expect(validateEmail(value)).toBe({ required: 'This field is required' });  
+    })
+
+    it("should accept validation after passing value", () => {      
+      // ACT
+      const value = 'aaa';
+      // ASSERT
+      expect(validateEmail(value)).toBe({ required: '' });
+    })
+  })
+
+  describe('validateMinLength', () => {
+    // ARRANGE:
+    it("should inform about min lenght when provided value is to short", () => {      
+    // ACT
+    const value = 'xyz';
+    const minLength = 5;
+    // ASSERT
+    expect(validateMinLength(value, minLength)).toBe({ minLength: `Field must have at least ${minLength} chars` });
+  })
+
+    it("should accept validation after passing value", () => {      
+      // ACT
+      const value = 'xyz';
+      const minLength = 2;
+      // ASSERT
+      expect(validateMinLength(value, minLength)).toBe({ minLength: '' });
+    })
+  })
+
+  describe('validateEmail', () => {
+    // ARRANGE:
+    const value = 'xyz';
+
+    it("should throw an error when password doesn't contain ", () => {      
+    // ACT
+    const minLength = 5;
+    // ASSERT
+    expect(validateMinLength(value, minLength)).toBe({ minLength: `Field must have at least ${minLength} chars` });
+  })
+
+    it("should accept validation after passing proper value", () => {      
+      // ACT
+      const minLength = 2;
+      // ASSERT
+      expect(validateMinLength(value, minLength)).toBe({ minLength: '' });
+    })
+  })
