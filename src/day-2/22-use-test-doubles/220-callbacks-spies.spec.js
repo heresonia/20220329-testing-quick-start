@@ -51,6 +51,6 @@ describe('[220] callMyFriend', () => {
 
     callMyFriend(spy);
 
-    expect(spy.mock.calls[1][0]).toBe('beep');
+    expect(spy.mock.calls[1][0]).toBe('beep2');
   });
 });
