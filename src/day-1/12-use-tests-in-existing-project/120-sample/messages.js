@@ -59,6 +59,6 @@ export const messages = {
   },
   restart() {
     currentMessage = -1;
-    return messages.getNextMessage();
+    // return messages.getNextMessage();
   },
 };
