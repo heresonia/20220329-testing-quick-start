@@ -1,4 +1,4 @@
-import { possibleChoices } from './game.js';
+import { makeAMove, possibleChoices } from './game.js';
 
 /**
  * TASK(121);
@@ -40,8 +40,24 @@ describe('The Rock-Paper-Scissors Game', () => {
     possibleChoices(['rock', 'paper', 'scissors']);
   });
 
-  it('should ...', () => {})
+  it('should throw Error if 1st choice does not exist', () => {
+      
+      // Arrange
+      const gameChoice = 'NOT-existing';   
+      
+      expect(() => makeAMove(gameChoice)).toThrow(`There is no "${gameChoice}" option in game choices!`);
+  })
   
   
-  
+  it('should be DRAW if the same choices given', () => {
+      
+    // Arrange
+    const firstChoice = 'paper';
+    const secondChoice = 'paper';   
+    
+    // Act:
+    const gameResult = makeAMove(firstChoice, secondChoice);
+    
+    expect(gameResult).toBe('game-draw')
+  })
 });
