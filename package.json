@@ -16,7 +16,8 @@
     "test:task-113": "npm run test:watch -- src/day-1/11-unit-testing-intro/113-task-write-a-unit-test-of-your-own.spec.js",
     "test:task-120": "npm run test:watch -- src/day-1/12-use-tests-in-existing-project/120-sample/[your-test-name].js",
     "test:task-121": "npm run test:watch -- src/day-1/12-use-tests-in-existing-project/121-sample/121-task-game.spec.js",
-    "test:example-210": "npm run test:watch -- src/day-2/21-change-code-to-be-testable/210-stub-module-example/210-stub-whole-module.spec.js"
+    "test:example-210": "npm run test:watch -- src/day-2/21-change-code-to-be-testable/210-stub-module-example/210-stub-whole-module.spec.js",
+    "test:messages": "npm run test:watch -- src/day-1/12-use-tests-in-existing-project/120-sample/messages.spec.js"
   },
   "keywords": [],
   "author": "",
