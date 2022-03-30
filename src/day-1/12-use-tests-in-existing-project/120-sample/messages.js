@@ -49,6 +49,9 @@ export const messages = {
     if (previousMessage) {
       currentMessage--;
     }
+    if(currentMessage === -1) {
+       currentMessage = 0;
+    }
     const { text, message } = msgArray[currentMessage];
     return {
       text,

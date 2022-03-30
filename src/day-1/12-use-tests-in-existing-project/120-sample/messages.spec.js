@@ -83,4 +83,15 @@ describe('messages', () => {
         expect(messageObject.message).toBeDefined();
         expect(typeof messageObject.message).toBe('string');
     })
+    
+    it('should Always provide a message even when we pop previous at', () => {
+        
+        // ACT:
+        const messageObject = messages.getPreviousMessage(); 
+        
+
+        // ASSERT
+        expect(messageObject.message).toBeDefined();
+        expect(typeof messageObject.message).toBe('string');
+    })
 })
