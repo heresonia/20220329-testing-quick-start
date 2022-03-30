@@ -13,7 +13,7 @@ function makeAMove(choice1, choice2) {
   if (!hasSecondChoice) {
     throw new Error(`There is no "${choice2}" option in game choices!`);
   }
-  if (choice1 === choice2) {
+  if (choice1 == choice2) {
     return 'game-draw';
   }
   const choiceIdx = choices.indexOf(choice1);

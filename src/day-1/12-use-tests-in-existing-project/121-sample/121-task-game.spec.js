@@ -59,5 +59,33 @@ describe('The Rock-Paper-Scissors Game', () => {
     const gameResult = makeAMove(firstChoice, secondChoice);
     
     expect(gameResult).toBe('game-draw')
+    // expect(makeAMove('scissors', 'scissors')).toBe('game-draw')
+    // expect(makeAMove('paper', 'paper')).toBe('game-draw')
   })
+  
+  it.each([
+    ['rock', 'rock'],
+    ['paper', 'paper'],
+    ['scissors', 'scissors']
+  ])('should be DRAW if 1st: %s , 2nd: %s', (firstChoice, secondChoice) => {
+    const gameResult = makeAMove(firstChoice, secondChoice);
+    
+    expect(gameResult).toBe('game-draw')
+  });
+
+  it.each([
+    ['rock', 'scissors', 'game-win'],
+    ['paper', 'rock', 'game-win'],
+    ['scissors', 'paper', 'game-win'],
+    ['rock', 'paper', 'game-loose'],
+    ['paper', 'scissors', 'game-loose'],
+    ['scissors', 'rock', 'game-loose']
+  ])(' 1st: %s , 2nd: %s THEN %s', (firstChoice, secondChoice, expectedResult) => {
+    const gameResult = makeAMove(firstChoice, secondChoice);
+    
+    expect(gameResult).toBe(expectedResult) 
+  });
+
+  
+  
 });
