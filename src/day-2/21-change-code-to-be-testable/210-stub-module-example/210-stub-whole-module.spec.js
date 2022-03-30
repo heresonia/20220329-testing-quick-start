@@ -15,13 +15,13 @@
  * W tym układzie powstaje problem. Ponieważ generowanie banneru jest zależne od działania `time()`.
  * Nie możemy dokładnie określić, jak będzie wyglądał "banner" - który chcemy testować?
  * */
-/*
+
 // Odkomentuj ten blok aby sprawdzić zachowanie mock'owania całego modułu:
 jest.mock('./210-time-module', () => ({
   // mock the .time() implementation:
   time: jest.fn(() => '11:02:56'),
 }));
-*/
+
 import { shoutBannerFor } from './210-to-test-module.js';
 
 describe('210 - how to stub any module', () => {
@@ -45,10 +45,10 @@ describe('210 - how to stub any module', () => {
     const product = 'bananas';
     const price = 2.65;
 
-    const banner = shoutBannerFor(product, price);
+    const banner = shoutBannerFor(product, price, '20:00:31');
 
     expect(banner).toBe(
-      "Welcome, today's (11:02:56) promotion is: bananas for 2.65"
+      "Welcome, today's (20:00:31) promotion is: bananas for 2.65"
     );
   });
 
