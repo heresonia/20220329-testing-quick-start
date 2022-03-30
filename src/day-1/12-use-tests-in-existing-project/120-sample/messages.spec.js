@@ -4,11 +4,12 @@ import { messages } from './messages.js'
 
 describe('messages', () => {
     
+    beforeEach(() => {
+         // ARRANGE:
+         messages.restart();
+    })
     
-    it('should not have previous message at start and hasNext to be true', () => {
-        // ARRANGE ?!
-        messages.restart();
-        
+    it('should not have previous message at start and hasNext to be true', () => {      
         // ACT
         const msgObject = messages.getNextMessage();
         
@@ -20,9 +21,6 @@ describe('messages', () => {
     })
     
     it('should not have previous message at start and hasNext to be true', () => {
-        // ARRANGE ?!
-        messages.restart();
-        
         const msgObject = messages.getNextMessage();
         
 
